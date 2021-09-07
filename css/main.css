@@ -1,0 +1,27 @@
+*
+{
+  margin:0;
+  padding:0;
+}
+
+#page_main{}
+
+.scholar
+{
+  background-color: rgba(0,0,0,0.1);
+  height: 100px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.scholar:hover
+{
+  background-color: rgba(0,0,0,0.2);
+}
+
+.scholar p
+{
+  color: black;
+  text-align: center;
+  line-height: 200px;
+}
