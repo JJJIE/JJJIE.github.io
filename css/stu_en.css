@@ -1,12 +1,23 @@
+body
+{
+  box-sizing: content-box;
+}
+
 #page_head
 {
 	margin: 5px;
 	padding: 5px;
 }
 
+#page_head h1
+{
+  height: 80px;
+  line-height: 80px;
+}
+
 .sch_title
 {
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0,0,0,0.05);
   height: 80px;
   margin: 5px;
   padding: 5px;
@@ -25,4 +36,17 @@
   line-height: 80px;
   font-size: 24px;
   font-weight: 700;
+}
+
+#for_set_text
+{
+  background-color: rgba(0,0,0,0.05);
+  margin: 5px;
+  padding: 5px;
+  padding-left: 15px;
+}
+.sch_text
+{
+  width: 100%;
+  height: 500px;
 }
