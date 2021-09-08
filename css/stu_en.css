@@ -4,8 +4,25 @@
 	padding: 5px;
 }
 
-.scholar
+.sch_title
 {
-	margin: 5px;
-	padding: 5px;	
+  background-color: rgba(0,0,0,0.1);
+  height: 80px;
+  margin: 5px;
+  padding: 5px;
+  padding-left: 15px;
+}
+
+.sch_title:hover
+{
+  background-color: rgba(0,0,0,0.2);
+}
+
+.sch_title p
+{
+  color: black;
+  text-align: left;
+  line-height: 80px;
+  font-size: 24px;
+  font-weight: 700;
 }
