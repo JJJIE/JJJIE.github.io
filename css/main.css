@@ -10,7 +10,7 @@
 .scholar
 {
   background-color: rgba(0,0,0,0.05);
-  height: 100px;
+  height: 80px;
   margin: 5px;
   padding: 5px;
 }
@@ -24,7 +24,7 @@
 {
   color: black;
   text-align: center;
-  line-height: 100px;
+  line-height: 80px;
   font-size: 36px;
   font-weight: 700;
 }

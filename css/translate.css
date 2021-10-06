@@ -1,0 +1,21 @@
+#container {
+	width: 100%;
+	user-select: none;
+}
+
+.trans {
+	display: inline;
+}
+
+.transbutton {
+	display: inline;
+}
+
+.transbutton:hover
+{
+	background-color: rgba(0,0,0,0.2);
+}
+
+.text_ch{
+	color: rgba(0,0,0,0.5);
+}
