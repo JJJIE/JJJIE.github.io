@@ -26,5 +26,12 @@
   text-align: center;
   line-height: 80px;
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 600;
+}
+.arrow
+{
+  float: left;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 5px;
 }
