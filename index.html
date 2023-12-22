@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>我其实也很不错</title>
-	<script src="js/jquery.min.js"></script>
-	<script src="js/dat.gui-min.js"></script>
-	<script src="js/jump.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/bg.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/fish.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我其实也很不错</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/dat.gui-min.js"></script>
+    <script src="js/jump.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bg.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/fish.css">
+    <link rel="stylesheet" type="text/css" href="css/password.css">
 </head>
 <body>
-    <div id="login-container">
-        <input type="password" id="password" placeholder="请输入密码">
-        <button onclick="login()">登录</button>
-    </div>
+    <form id="login-form">
+        <input type="password" id="password" placeholder="请输入密码" autofocus>
+        <!-- 移除登录按钮，使用表单默认提交行为 -->
+    </form>
 
     <script>
+        document.getElementById('login-form').addEventListener('submit', function (event) {
+            event.preventDefault();  // 阻止表单默认提交事件
+            login();
+        });
+
         function login() {
             var password = document.getElementById('password').value;
-            // 将密码发送到服务器进行验证
+            // 发送密码到服务器进行验证
             fetch('/login', {
                 method: 'POST',
                 headers: {
@@ -32,8 +38,6 @@
                 .then(data => {
                     if (data.success) {
                         window.location.href = '/diaries.html'; // 重定向到日记页面
-                    } else {
-                        alert('密码错误！');
                     }
                 });
         }
@@ -45,11 +49,11 @@
     <!-- <img class="arrow" src="arrowr.png" width="40px">
     </div>
     <div class="scholar"></div>
-    </div>
+    </div> -->
     <div id="page_end">
         <div id="container_flying-fish" class="container"></div>
         <script src='js/fish.js'></script>
-    </div> -->
+    </div>
     <!-- 	<div id ="background">
             <div id="container_particle-container"class="container"></div>
             <script src="js/bg.js"></script>
