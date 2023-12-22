@@ -4,52 +4,59 @@
     <meta charset="UTF-8">
     <title>日记页面</title>
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            overflow-y: scroll; /* 允许垂直滚动 */
-            scrollbar-width: none; /* 对于Firefox */
-        }
-
-            body::-webkit-scrollbar {
-                display: none; /* 对于Chrome, Safari 和 Opera */
-            }
-
         #diary-container {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             padding: 10px;
-            min-height: 200px;
-            box-sizing: border-box; /* 防止内边距影响容器大小 */
+            align-items: flex-start;
+        }
+        .add-button {
+            width: 140px;
+        }
+        .diary-entry, .add-button {
+            height: 160px; /* 设置固定高度 */
+            border: 1px solid #000;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #eee;
+            transition: background-color 0.3s; /* 鼠标悬停颜色变换效果 */
         }
 
-        .diary-entry {
-            padding: 5px;
-            display: flex;
-            align-items: center;
-            min-height: 180px; /* 设置固定高度 */
-            background-color: #f0f0f0;
-        }
+            .diary-entry:hover, .add-button:hover {
+                background-color: #ccc; /* 鼠标悬停时颜色变深 */
+            }
 
             .diary-entry input {
                 border: none;
-                background-color: transparent;
                 outline: none;
+                width: auto;
+                min-width: 50px; /* 输入框最小宽度 */
+                max-width: calc(100vw - 70px); /* 最大宽度以避免超出屏幕 */
             }
 
         .add-button {
             cursor: pointer;
             font-size: 24px;
             user-select: none;
-            border: 2px solid #000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 30px; /* 设置加号的大小 */
-            height: 30px;
-            background-color: #ddd; /* 填充颜色 */
+            padding: 0 10px;
+            min-width: 50px; /* 加号按钮最小宽度 */
         }
+
+        /* 隐藏滚动条但允许滚动 */
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow-y: scroll;
+            scrollbar-width: none; /* Firefox */
+        }
+
+            body::-webkit-scrollbar {
+                display: none; /* Chrome, Safari, Opera */
+            }
+
     </style>
 </head>
 <body>
@@ -65,12 +72,13 @@
             titleInput.type = 'text';
             titleInput.placeholder = 'Enter title here...';
             titleInput.oninput = function () {
-                this.style.width = ((this.value.length + 1) * 8) + 'px';
+                this.style.width = ((this.value.length + 1) * 8) + 'px'; // 根据内容动态调整宽度
             };
             newEntry.appendChild(titleInput);
             document.getElementById('diary-container').appendChild(newEntry);
             titleInput.focus();
         });
+
     </script>
 </body>
 </html>
